@@ -26,7 +26,7 @@ type RegisterPayload struct {
 func ConfirmC2BMpesa(rw http.ResponseWriter, r *http.Request) {
 	var (
 		client    = &http.Client{}
-		basicAuth = base64.StdEncoding.EncodeToString([]byte("gVCZ3ZZ2f3ikp5w3Gim9J9lQ6WZbnETj:rqv8o8wbnecy2AzI"))
+		basicAuth = base64.StdEncoding.EncodeToString([]byte("BASIC AUTH"))
 
 		accessToken Authorization
 		mpesaTill   int
@@ -54,8 +54,8 @@ func ConfirmC2BMpesa(rw http.ResponseWriter, r *http.Request) {
 	payloadBytes, err := json.Marshal(RegisterPayload{
 		ShortCode:       mpesaTill,
 		ResponseType:    "Completed",
-		ConfirmationURL: "https://webhook.site/627d718d-8393-407c-8ed8-e699f2fb94f9",
-		ValidationURL:   "https://webhook.site/627d718d-8393-407c-8ed8-e699f2fb94f9",
+		ConfirmationURL: "https://webhook.site/627d718d-8393-407c-8ed8-e699f2fb94f9",//test url,
+		ValidationURL:   "https://webhook.site/627d718d-8393-407c-8ed8-e699f2fb94f9",//test url,
 	})
 	if err != nil {
 		fmt.Println(err)
